@@ -1,0 +1,195 @@
+
+{
+  "nodes": {
+    "entrance": {
+      "title": "Entrance",
+      "image": "images/ground floor/1.jpeg",
+      "links": [
+        {
+          "target": "junction1",
+          "yaw": 130,
+          "pitch": -15,
+          "text": "Go to Intel/DEAN Academics"
+        },
+        {
+          "target": "First Floor",
+          "yaw": 235,
+          "pitch": -5,
+          "text": "Go to First Floor"
+        }
+      ]
+    },
+
+    "junction1": {
+      "title": "Turn 1",
+      "image": "images/ground floor/2.jpeg",
+      "links": [
+        {
+          "target": "junction2",
+          "yaw": 310,
+          "pitch": -15,
+          "text": "Go to Intel/DEAN Academics"
+        }
+      ]
+    },
+
+    "junction2": {
+      "title": "Turn 2",
+      "image": "images/ground floor/3.jpeg",
+      "links": [
+        {
+          "target": "junction3",
+          "yaw": 550,
+          "pitch": 0,
+          "text": "Go to Intel/DEAN Academics"
+        }
+      ]
+    },
+
+    "junction3": {
+      "title": "Turn 3 (Water cooler)/ DEAN Academics Cabin",
+      "image": "images/ground floor/4.jpeg",
+      "links": [
+        {
+          "target": "junction4",
+          "yaw": 310,
+          "pitch": -15,
+          "text": "Way to Intel lab"
+        }
+      ]
+    },
+
+    "junction4": {
+      "title": "way to Intel lab",
+      "image": "images/ground floor/5.jpeg",
+      "links": [
+        {
+          "target": "junction5",
+          "yaw": 300,
+          "pitch": -15,
+          "text": "way to ML lab (Ground floor)"
+        }
+      ]
+    },
+
+    "junction5": {
+      "title": "way to ML lab / HOD 1st year (Dept. of BSH)",
+      "image": "images/ground floor/6.jpeg",
+      "links": [
+        {
+          "target": "junction6",
+          "yaw": 300,
+          "pitch": -15,
+          "text": "way to ML lab (Ground floor)"
+        }        
+      ]
+    },
+
+    "junction6": {
+      "title": "ML lab / HOD 1st year (Dept. of BSH)",
+      "image": "images/ground floor/7.jpeg",
+      "links": [
+        {
+          "text": "End"
+        }
+      ]
+    },
+
+
+    "First Floor": {
+      "title": "First Floor",
+      "image": "images/first floor/1 ff.jpg",
+      "links": [
+        {
+          "target": "entrance",
+          "yaw": 10,
+          "pitch": -15,
+          "text": "Go to Ground Floor"
+        },
+        {
+          "target": "TCR1",
+          "yaw": 300,
+          "pitch": -15,
+          "text": "Go to TCR 1"
+        }
+      ]
+    },
+
+    "TCR1": {
+      "title": "TCR1",
+      "image": "images/first floor/2 ff.jpg",
+      "links": [
+        {
+          "target": "First Floor",
+          "yaw": 0,
+          "pitch": -15,
+          "text": "Go to Ground Floor"
+        },
+        {
+          "target": "TCR2",
+          "yaw": 200,
+          "pitch": -15,
+          "text": "Go to TCR 2"
+        }
+      ]
+    },
+
+    "TCR2": {
+      "title": "TCR2",
+      "image": "images/first floor/3 ff.jpg",
+      "links": [
+        {
+          "target": "TCR1",
+          "yaw": -60,
+          "pitch": -15,
+          "text": "Go to TCR 1"
+        },
+        {
+          "target": "TCR5",
+          "yaw": 100,
+          "pitch": -15,
+          "text": "Go to TCR 5"
+        }
+      ]
+    },
+
+    "TCR5": {
+      "title": "TCR5",
+      "image": "images/first floor/4 ff.jpg",
+      "links": [
+        {
+          "target": "TCR2",
+          "yaw": 280,
+          "pitch": -15,
+          "text": "Go to TCR 2"
+        },
+        {
+          "target": "ff_junction1",
+          "yaw": 100,
+          "pitch": -15,
+          "text": "Go to CSME HOD Cabin."
+        }
+      ]
+    },
+
+    "ff_junction1": {
+      "title": "TCR5",
+      "image": "images/first floor/5 ff.jpg",
+      "links": [
+        {
+          "target": "TCR5",
+          "yaw": 0,
+          "pitch": -15,
+          "text": "Go to TCR 5"
+        },
+        {
+          "target": "First Floor",
+          "yaw": 200,
+          "pitch": -15,
+          "text": "Go to TCR 1"
+        }
+      ]
+    }
+
+  }
+}
