@@ -1,15 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hospital Navigation</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum/build/pannellum.css"/>
+
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/pannellum/build/pannellum.css">
   <script src="https://cdn.jsdelivr.net/npm/pannellum/build/pannellum.js"></script>
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div id="viewer"></div>
+  <div id="viewer"></div>
 
-<script src="app.js"></script>
+  <!-- Navigation control panel -->
+  <aside class="nav-panel" aria-label="Hospital navigation controls">
+    <div class="brand">
+      <div class="brand-icon">✚</div>
+      <div>
+        <h1>Hospital Navigation</h1>
+        <p>Indoor 360° wayfinding</p>
+      </div>
+    </div>
+
+    <div class="route-card">
+      <label for="startSelect">Initial Location</label>
+      <select id="startSelect">
+        <option value="">Loading locations...</option>
+      </select>
+
+      <button id="swapBtn" class="swap-btn" type="button" title="Swap locations">
+        ⇅
+      </button>
+
+      <label for="destinationSelect">Destination</label>
+      <select id="destinationSelect">
+        <option value="">Loading destinations...</option>
+      </select>
+
+      <button id="navigateBtn" class="navigate-btn" type="button">
+        Start Navigation
+      </button>
+    </div>
+
+    <div id="routeInfo" class="route-info hidden" aria-live="polite">
+      <div class="route-header">
+        <strong>Route</strong>
+        <span id="stepCount"></span>
+      </div>
+      <div id="routeSteps" class="route-steps"></div>
+    </div>
+
+    <div id="currentLocation" class="current-location">
+      <span class="status-dot"></span>
+      <span id="currentLocationText">Loading map...</span>
+    </div>
+  </aside>
+
+  <button id="panelToggle" class="panel-toggle" type="button"
+          aria-label="Hide navigation panel" aria-expanded="true">
+    ‹
+  </button>
+
+  <div id="message" class="message" role="status" aria-live="polite"></div>
+
+  <script src="app.js"></script>
 </body>
 </html>
