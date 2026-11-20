@@ -268,20 +268,6 @@ body {
   display: none;
 }
 
-/* Pannellum hotspot appearance */
-div.pnlm-hotspot-base {
-  background-image: none !important;
-}
-
-.route-hotspot {
-  width: 0 !important;
-  height: 0 !important;
-  border-left: 15px solid transparent !important;
-  border-right: 15px solid transparent !important;
-  border-bottom: 27px solid #20b26b !important;
-  filter: drop-shadow(0 2px 3px rgba(0,0,0,.35));
-  transform: rotate(0deg);
-}
 
 @media (max-width: 600px) {
   .nav-panel {
@@ -309,4 +295,85 @@ div.pnlm-hotspot-base {
   .nav-panel.collapsed + .panel-toggle {
     right: 16px;
   }
+}
+
+/* ---- Navigation arrows and route trail (drawn on the 360 photo) ---- */
+.nav-hotspot {
+  width: 56px !important;
+  height: 56px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.nav-arrow {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 23, 36, 0.85);
+  border: 2px solid #9eacbf;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+  transition: transform 0.15s ease;
+}
+
+.nav-arrow svg {
+  width: 20px;
+  height: 20px;
+  fill: #ffffff;
+}
+
+.nav-arrow:hover {
+  transform: scale(1.1);
+}
+
+.nav-arrow.next {
+  width: 52px;
+  height: 52px;
+  background: #20b26b;
+  border: 3px solid #ffffff;
+  animation: navPulse 1.6s infinite;
+}
+
+.nav-arrow.next svg {
+  width: 28px;
+  height: 28px;
+}
+
+.nav-arrow-label {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #20b26b;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+}
+
+.trail-dot {
+  position: absolute;
+  border-radius: 50%;
+  background: #20b26b;
+  box-shadow: 0 0 6px rgba(32, 178, 107, 0.9);
+  pointer-events: none;
+}
+
+@keyframes navPulse {
+  0%   { box-shadow: 0 0 0 0 rgba(32, 178, 107, 0.7); }
+  70%  { box-shadow: 0 0 0 14px rgba(32, 178, 107, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(32, 178, 107, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-arrow.next { animation: none; }
 }

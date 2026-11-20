@@ -126,6 +126,33 @@ function loadScene(sceneId) {
 
   const isOnRoute = navigationStarted && route.length > 0;
   const nextSceneId = isOnRoute ? route[routeIndex + 1] : null;
+  const links = scene.links || [];
+  const nextLink = nextSceneId ? links.find(link => link.target === nextSceneId) : null;
+
+  const hotSpots = links.map(link => {
+    const label = link.text || (link.target ? `Go to ${graph[link.target]?.title || link.target}` : "End");
+    const isNext = Boolean(nextLink && link === nextLink);
+
+    return {
+      pitch: Number(link.pitch || 0),
+      yaw: Number(link.yaw || 0),
+      type: "custom",
+      createTooltipFunc: buildArrow,
+      createTooltipArgs: { label, isNext },
+      clickHandlerFunc: () => {
+        if (!link.target) {
+          showMessage("You have reached the end of this route.");
+          return;
+        }
+        advanceNavigation(link.target);
+        loadScene(link.target);
+      }
+    };
+  });
+
+  if (nextLink) {
+    hotSpots.push(...buildRouteTrail(nextLink));
+  }
 
   viewer = pannellum.viewer("viewer", {
     type: "equirectangular",
@@ -133,29 +160,61 @@ function loadScene(sceneId) {
     autoLoad: true,
     showControls: true,
     compass: false,
-    hotSpots: (scene.links || []).map(link => {
-      const isNext = link.target && link.target === nextSceneId;
-
-      return {
-        pitch: Number(link.pitch || 0),
-        yaw: Number(link.yaw || 0),
-        type: "custom",
-        cssClass: isNext ? "route-hotspot" : "",
-        text: link.text || (link.target ? `Go to ${graph[link.target]?.title || link.target}` : "End"),
-        clickHandlerFunc: () => {
-          if (!link.target) {
-            showMessage("You have reached the end of this route.");
-            return;
-          }
-
-          advanceNavigation(link.target);
-          loadScene(link.target);
-        }
-      };
-    })
+    hotSpots
   });
 
   updateRouteUI();
+}
+
+/* Visible arrow for each exit. The next exit on the route is larger, pulses, and shows its name. */
+function buildArrow(div, args) {
+  div.className = "nav-hotspot";
+  div.title = args.label;
+
+  const arrow = document.createElement("div");
+  arrow.className = "nav-arrow" + (args.isNext ? " next" : "");
+  arrow.innerHTML =
+    '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4l-8 9h5v7h6v-7h5z"/></svg>';
+  div.appendChild(arrow);
+
+  if (args.isNext) {
+    const tag = document.createElement("span");
+    tag.className = "nav-arrow-label";
+    tag.textContent = args.label;
+    div.appendChild(tag);
+  }
+}
+
+/* Dotted line on the photo: from the floor up to the next arrow, so the route is visible in the image. */
+function buildRouteTrail(nextLink) {
+  const yaw = Number(nextLink.yaw || 0);
+  const targetPitch = Number(nextLink.pitch || 0);
+  const floorPitch = -55;
+  const dots = 8;
+  const trail = [];
+
+  for (let i = 0; i < dots; i++) {
+    const t = i / dots;
+    const pitch = floorPitch + (targetPitch - floorPitch) * t;
+    const size = 6 + Math.round(t * 6);
+
+    trail.push({
+      pitch,
+      yaw,
+      type: "custom",
+      createTooltipFunc: buildDot,
+      createTooltipArgs: { size, opacity: 0.35 + t * 0.65 }
+    });
+  }
+
+  return trail;
+}
+
+function buildDot(div, args) {
+  div.className = "trail-dot";
+  div.style.width = args.size + "px";
+  div.style.height = args.size + "px";
+  div.style.opacity = String(args.opacity);
 }
 
 function advanceNavigation(targetId) {

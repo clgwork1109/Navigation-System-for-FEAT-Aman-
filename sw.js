@@ -12,7 +12,7 @@
  *  - The image cache has a size limit so storage cannot grow without bound.
  */
 
-const CACHE_VERSION = "nav-v1.0.0";
+const CACHE_VERSION = "nav-v1.0.1";
 const SHELL_CACHE = `${CACHE_VERSION}-shell`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 const MAX_IMAGES = 60;
