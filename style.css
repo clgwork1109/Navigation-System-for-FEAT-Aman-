@@ -299,8 +299,16 @@ body {
 
 /* ---- Navigation arrows and route trail (drawn on the 360 photo) ---- */
 .nav-hotspot {
-  width: 56px !important;
-  height: 56px !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: visible !important;
+}
+
+.nav-arrow-wrap {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -361,7 +369,12 @@ body {
 }
 
 .trail-dot {
+  width: 6px;
+  height: 6px;
   position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%);
   border-radius: 50%;
   background: #20b26b;
   box-shadow: 0 0 6px rgba(32, 178, 107, 0.9);

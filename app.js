@@ -166,44 +166,46 @@ function loadScene(sceneId) {
   updateRouteUI();
 }
 
-/* Visible arrow for each exit. The next exit on the route is larger, pulses, and shows its name. */
+/* Visible arrow for each exit, centred exactly on its yaw/pitch point.
+   classList.add keeps Pannellum's own positioning classes. */
 function buildArrow(div, args) {
-  div.className = "nav-hotspot";
+  div.classList.add("nav-hotspot");
   div.title = args.label;
+
+  const wrap = document.createElement("div");
+  wrap.className = "nav-arrow-wrap";
 
   const arrow = document.createElement("div");
   arrow.className = "nav-arrow" + (args.isNext ? " next" : "");
   arrow.innerHTML =
     '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4l-8 9h5v7h6v-7h5z"/></svg>';
-  div.appendChild(arrow);
+  wrap.appendChild(arrow);
 
   if (args.isNext) {
     const tag = document.createElement("span");
     tag.className = "nav-arrow-label";
     tag.textContent = args.label;
-    div.appendChild(tag);
+    wrap.appendChild(tag);
   }
+
+  div.appendChild(wrap);
 }
 
-/* Dotted line on the photo: from the floor up to the next arrow, so the route is visible in the image. */
+/* Short dotted trail that leads into the next arrow, placed on the same spot as the arrow. */
 function buildRouteTrail(nextLink) {
   const yaw = Number(nextLink.yaw || 0);
   const targetPitch = Number(nextLink.pitch || 0);
-  const floorPitch = -55;
-  const dots = 8;
   const trail = [];
+  const dots = 4;
 
   for (let i = 0; i < dots; i++) {
-    const t = i / dots;
-    const pitch = floorPitch + (targetPitch - floorPitch) * t;
-    const size = 6 + Math.round(t * 6);
-
+    const t = (i + 1) / (dots + 1);
     trail.push({
-      pitch,
+      pitch: targetPitch - 14 + 10 * t,
       yaw,
       type: "custom",
       createTooltipFunc: buildDot,
-      createTooltipArgs: { size, opacity: 0.35 + t * 0.65 }
+      createTooltipArgs: { size: 6 + Math.round(t * 4), opacity: 0.4 + t * 0.6 }
     });
   }
 
@@ -211,7 +213,7 @@ function buildRouteTrail(nextLink) {
 }
 
 function buildDot(div, args) {
-  div.className = "trail-dot";
+  div.classList.add("trail-dot");
   div.style.width = args.size + "px";
   div.style.height = args.size + "px";
   div.style.opacity = String(args.opacity);
