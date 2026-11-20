@@ -124,31 +124,34 @@ function loadScene(sceneId) {
 
   if (viewer) viewer.destroy();
 
-  const isOnRoute = navigationStarted && route.length > 0;
-  const nextSceneId = isOnRoute ? route[routeIndex + 1] : null;
+  // Arrows are shown only while navigation is running, and hidden again at the destination.
+  const navActive = navigationStarted && route.length > 1 && routeIndex < route.length - 1;
+  const nextSceneId = navActive ? route[routeIndex + 1] : null;
   const links = scene.links || [];
   const nextLink = nextSceneId ? links.find(link => link.target === nextSceneId) : null;
 
-  const hotSpots = links.map(link => {
-    const label = link.text || (link.target ? `Go to ${graph[link.target]?.title || link.target}` : "End");
-    const isNext = Boolean(nextLink && link === nextLink);
+  const hotSpots = navActive
+    ? links.map(link => {
+        const label = link.text || (link.target ? `Go to ${graph[link.target]?.title || link.target}` : "End");
+        const isNext = Boolean(nextLink && link === nextLink);
 
-    return {
-      pitch: Number(link.pitch || 0),
-      yaw: Number(link.yaw || 0),
-      type: "custom",
-      createTooltipFunc: buildArrow,
-      createTooltipArgs: { label, isNext },
-      clickHandlerFunc: () => {
-        if (!link.target) {
-          showMessage("You have reached the end of this route.");
-          return;
-        }
-        advanceNavigation(link.target);
-        loadScene(link.target);
-      }
-    };
-  });
+        return {
+          pitch: Number(link.pitch || 0),
+          yaw: Number(link.yaw || 0),
+          type: "custom",
+          createTooltipFunc: buildArrow,
+          createTooltipArgs: { label, isNext },
+          clickHandlerFunc: () => {
+            if (!link.target) {
+              showMessage("You have reached the end of this route.");
+              return;
+            }
+            advanceNavigation(link.target);
+            loadScene(link.target);
+          }
+        };
+      })
+    : [];
 
   if (nextLink) {
     hotSpots.push(...buildRouteTrail(nextLink));

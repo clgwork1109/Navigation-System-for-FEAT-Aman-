@@ -7,14 +7,14 @@
       "links": [
         {
           "target": "junction1",
-          "yaw": 131.6,
-          "pitch": -11.6,
+          "yaw": 130,
+          "pitch": -15,
           "text": "Go to Intel/DEAN Academics"
         },
         {
           "target": "First Floor",
-          "yaw": -123.4,
-          "pitch": -7.6,
+          "yaw": 235,
+          "pitch": -5,
           "text": "Go to First Floor"
         }
       ]
