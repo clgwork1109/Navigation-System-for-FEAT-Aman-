@@ -245,6 +245,13 @@ function startNavigation() {
   const start = startSelect.value;
   const destination = destinationSelect.value;
 
+  // On phones, hide the panel once navigation starts so the photo is visible.
+  if (window.matchMedia("(max-width: 600px)").matches) {
+    navPanel.classList.add("collapsed");
+    panelToggle.classList.add("collapsed");
+    panelToggle.textContent = "›";
+  }
+
   if (!start || !destination) {
     showMessage("Select an initial location and destination.");
     return;
