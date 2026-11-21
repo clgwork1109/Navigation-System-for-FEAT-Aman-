@@ -3,7 +3,7 @@
   "nodes": {
     "entrance": {
       "title": "Entrance",
-      "image": "images/ground floor/1.jpeg",
+      "image": "images/ground floor/sweep demo.jpeg",
       "links": [
         {
           "target": "junction1",
