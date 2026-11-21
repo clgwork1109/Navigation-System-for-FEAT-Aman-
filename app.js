@@ -16,6 +16,8 @@ const currentLocationText = document.getElementById("currentLocationText");
 const message = document.getElementById("message");
 const navPanel = document.querySelector(".nav-panel");
 const panelToggle = document.getElementById("panelToggle");
+const arrivedBox = document.getElementById("arrivedBox");
+const arrivedText = document.getElementById("arrivedText");
 
 fetch("data.json")
   .then(response => {
@@ -167,6 +169,7 @@ function loadScene(sceneId) {
   });
 
   updateRouteUI();
+  updateArrivedBox();
 }
 
 /* Visible arrow for each exit, centred exactly on its yaw/pitch point.
@@ -308,6 +311,18 @@ function updateRouteUI() {
     item.appendChild(text);
     routeSteps.appendChild(item);
   });
+}
+
+function updateArrivedBox() {
+  const arrived = navigationStarted && route.length > 0 && routeIndex === route.length - 1;
+
+  if (arrived) {
+    const scene = graph[route[routeIndex]];
+    arrivedText.textContent = scene?.title || route[routeIndex];
+    arrivedBox.classList.remove("hidden");
+  } else {
+    arrivedBox.classList.add("hidden");
+  }
 }
 
 function showMessage(text) {

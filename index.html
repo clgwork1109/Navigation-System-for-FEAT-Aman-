@@ -15,6 +15,15 @@
 
   <div id="viewer"></div>
 
+  <!-- Shown on the photo when the user reaches the destination -->
+  <div id="arrivedBox" class="arrived-box hidden" role="status" aria-live="polite">
+    <div class="arrived-check">✓</div>
+    <div>
+      <strong>You have arrived</strong>
+      <span id="arrivedText"></span>
+    </div>
+  </div>
+
   <!-- Navigation control panel -->
   <aside class="nav-panel" aria-label="Hospital navigation controls">
     <div class="brand">

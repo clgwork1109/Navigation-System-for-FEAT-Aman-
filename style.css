@@ -390,3 +390,51 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .nav-arrow.next { animation: none; }
 }
+
+/* ---- Arrived box shown on the destination photo ---- */
+.arrived-box {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 25;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  border-radius: 14px;
+  background: #20b26b;
+  color: #ffffff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+  pointer-events: none;
+  max-width: 90vw;
+}
+
+.arrived-box.hidden {
+  display: none;
+}
+
+.arrived-box strong {
+  display: block;
+  font-size: 16px;
+}
+
+.arrived-box span {
+  display: block;
+  font-size: 14px;
+  opacity: 0.95;
+}
+
+.arrived-check {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #20b26b;
+  font-size: 22px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
