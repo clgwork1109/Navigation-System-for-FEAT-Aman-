@@ -6,13 +6,13 @@
       "links": [
         {
           "target": "g2",
-          "yaw": 0,
-          "pitch": -10
+          "yaw": 11.0,
+          "pitch": -14.9
         },
         {
           "target": "f1",
-          "yaw": 90,
-          "pitch": -10,
+          "yaw": 80.9,
+          "pitch": -6.7,
           "text": "Go up to First Floor"
         }
       ]
@@ -23,13 +23,13 @@
       "links": [
         {
           "target": "g1",
-          "yaw": 180,
-          "pitch": -10
+          "yaw": -92.2,
+          "pitch": -9.9
         },
         {
           "target": "g3",
-          "yaw": 0,
-          "pitch": -10
+          "yaw": 78.6,
+          "pitch": -23.4
         }
       ]
     },
@@ -39,13 +39,13 @@
       "links": [
         {
           "target": "g2",
-          "yaw": 180,
-          "pitch": -10
+          "yaw": 81.1,
+          "pitch": -19.0
         },
         {
           "target": "g4",
-          "yaw": 0,
-          "pitch": -10
+          "yaw": -101.1,
+          "pitch": -11.1
         }
       ]
     },
@@ -55,13 +55,13 @@
       "links": [
         {
           "target": "g3",
-          "yaw": 180,
-          "pitch": -10
+          "yaw": 7.6,
+          "pitch": -14.2
         },
         {
           "target": "g5",
-          "yaw": 0,
-          "pitch": -10
+          "yaw": -90.4,
+          "pitch": -14.1
         }
       ],
       "junction": true
@@ -72,13 +72,13 @@
       "links": [
         {
           "target": "g4",
-          "yaw": 180,
-          "pitch": -10
+          "yaw": 88.2,
+          "pitch": -16.9
         },
         {
           "target": "g6",
-          "yaw": 0,
-          "pitch": -10
+          "yaw": -147.8,
+          "pitch": -22.3
         }
       ],
       "junction": true
@@ -89,13 +89,13 @@
       "links": [
         {
           "target": "g5",
-          "yaw": 180,
-          "pitch": -10
+          "yaw": -87.8,
+          "pitch": -22.6
         },
         {
           "target": "g7",
-          "yaw": 0,
-          "pitch": -10
+          "yaw": 92.4,
+          "pitch": -23.0
         }
       ]
     },
@@ -105,13 +105,13 @@
       "links": [
         {
           "target": "g6",
-          "yaw": 180,
-          "pitch": -10
+          "yaw": -96.8,
+          "pitch": -32.4
         },
         {
           "target": "g8",
-          "yaw": 0,
-          "pitch": -10
+          "yaw": 77.7,
+          "pitch": -33.1
         }
       ]
     },
@@ -121,13 +121,13 @@
       "links": [
         {
           "target": "g7",
-          "yaw": 180,
-          "pitch": -10
+          "yaw": 91.5,
+          "pitch": -28.8
         },
         {
           "target": "g9",
-          "yaw": 0,
-          "pitch": -10
+          "yaw": -98.6,
+          "pitch": -33.3
         }
       ],
       "junction": true
@@ -149,19 +149,19 @@
       "links": [
         {
           "target": "f2",
-          "yaw": 0,
-          "pitch": -10
+          "yaw": -90.4,
+          "pitch": -25.9
         },
         {
           "target": "s1",
-          "yaw": 90,
+          "yaw": 49.0,
           "pitch": -10,
           "text": "Go up to Second Floor"
         },
         {
           "target": "g1",
-          "yaw": 270,
-          "pitch": -10,
+          "yaw": 5.7,
+          "pitch": -28.4,
           "text": "Go down to Ground Floor"
         }
       ],
@@ -173,13 +173,13 @@
       "links": [
         {
           "target": "f1",
-          "yaw": 180,
-          "pitch": -10
+          "yaw": -87.3,
+          "pitch": -25.7
         },
         {
           "target": "f3",
-          "yaw": 0,
-          "pitch": -10
+          "yaw": 89.0,
+          "pitch": -28.7
         }
       ],
       "junction": true
@@ -201,13 +201,13 @@
       "links": [
         {
           "target": "s2",
-          "yaw": 0,
-          "pitch": -10
+          "yaw": -71.2,
+          "pitch": -21.3
         },
         {
           "target": "f1",
-          "yaw": 270,
-          "pitch": -10,
+          "yaw": 8.4,
+          "pitch": -16.4,
           "text": "Go down to First Floor"
         }
       ],
@@ -219,13 +219,13 @@
       "links": [
         {
           "target": "s1",
-          "yaw": 180,
-          "pitch": -10
+          "yaw": 0.0,
+          "pitch": -23.9
         },
         {
           "target": "s3",
-          "yaw": 0,
-          "pitch": -10
+          "yaw": -94.6,
+          "pitch": -26.6
         }
       ],
       "junction": true
@@ -236,13 +236,13 @@
       "links": [
         {
           "target": "s2",
-          "yaw": 180,
-          "pitch": -10
+          "yaw": -0.6,
+          "pitch": -23.9
         },
         {
           "target": "s4",
-          "yaw": 0,
-          "pitch": -10
+          "yaw": 91.0,
+          "pitch": -33.2
         }
       ],
       "junction": true
@@ -253,13 +253,13 @@
       "links": [
         {
           "target": "s3",
-          "yaw": 180,
-          "pitch": -10
+          "yaw": 53.2,
+          "pitch": -21.2
         },
         {
           "target": "s5",
-          "yaw": 0,
-          "pitch": -10
+          "yaw": -85.4,
+          "pitch": -28.1
         }
       ]
     },
@@ -269,13 +269,13 @@
       "links": [
         {
           "target": "s4",
-          "yaw": 180,
-          "pitch": -10
+          "yaw": 92.7,
+          "pitch": -26.4
         },
         {
           "target": "s6",
-          "yaw": 0,
-          "pitch": -10
+          "yaw": -88.5,
+          "pitch": -27.6
         }
       ]
     },
@@ -285,13 +285,13 @@
       "links": [
         {
           "target": "s5",
-          "yaw": 180,
-          "pitch": -10
+          "yaw": -94.8,
+          "pitch": -31.6
         },
         {
           "target": "s7",
-          "yaw": 0,
-          "pitch": -10
+          "yaw": 88.0,
+          "pitch": -26.2
         }
       ]
     },

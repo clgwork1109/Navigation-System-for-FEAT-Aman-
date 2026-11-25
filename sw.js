@@ -14,7 +14,7 @@
  *    previous working version stays active.
  */
 
-const CACHE_VERSION = "nav-v1.0.7";
+const CACHE_VERSION = "nav-v1.0.8";
 const SHELL_CACHE = `${CACHE_VERSION}-shell`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 
