@@ -1,195 +1,310 @@
-
 {
   "nodes": {
-    "entrance": {
+    "g1": {
       "title": "Entrance",
-      "image": "images/ground floor/1.jpeg",
+      "image": "images/Ground floor/1Entrance.jpeg",
       "links": [
         {
-          "target": "junction1",
-          "yaw": 130,
-          "pitch": -15,
-          "text": "Go to Intel/DEAN Academics"
-        },
-        {
-          "target": "First Floor",
-          "yaw": 235,
-          "pitch": -5,
-          "text": "Go to First Floor"
-        }
-      ]
-    },
-
-    "junction1": {
-      "title": "Turn 1",
-      "image": "images/ground floor/2.jpeg",
-      "links": [
-        {
-          "target": "junction2",
-          "yaw": 310,
-          "pitch": -15,
-          "text": "Go to Intel/DEAN Academics"
-        }
-      ]
-    },
-
-    "junction2": {
-      "title": "Turn 2",
-      "image": "images/ground floor/3.jpeg",
-      "links": [
-        {
-          "target": "junction3",
-          "yaw": 550,
-          "pitch": 0,
-          "text": "Go to Intel/DEAN Academics"
-        }
-      ]
-    },
-
-    "junction3": {
-      "title": "Turn 3 (Water cooler)/ DEAN Academics Cabin",
-      "image": "images/ground floor/4.jpeg",
-      "links": [
-        {
-          "target": "junction4",
-          "yaw": 310,
-          "pitch": -15,
-          "text": "Way to Intel lab"
-        }
-      ]
-    },
-
-    "junction4": {
-      "title": "way to Intel lab",
-      "image": "images/ground floor/5.jpeg",
-      "links": [
-        {
-          "target": "junction5",
-          "yaw": 300,
-          "pitch": -15,
-          "text": "way to ML lab (Ground floor)"
-        }
-      ]
-    },
-
-    "junction5": {
-      "title": "way to ML lab / HOD 1st year (Dept. of BSH)",
-      "image": "images/ground floor/6.jpeg",
-      "links": [
-        {
-          "target": "junction6",
-          "yaw": 300,
-          "pitch": -15,
-          "text": "way to ML lab (Ground floor)"
-        }        
-      ]
-    },
-
-    "junction6": {
-      "title": "ML lab / HOD 1st year (Dept. of BSH)",
-      "image": "images/ground floor/7.jpeg",
-      "links": [
-        {
-          "text": "End"
-        }
-      ]
-    },
-
-
-    "First Floor": {
-      "title": "First Floor",
-      "image": "images/first floor/1 ff.jpg",
-      "links": [
-        {
-          "target": "entrance",
-          "yaw": 10,
-          "pitch": -15,
-          "text": "Go to Ground Floor"
-        },
-        {
-          "target": "TCR1",
-          "yaw": 300,
-          "pitch": -15,
-          "text": "Go to TCR 1"
-        }
-      ]
-    },
-
-    "TCR1": {
-      "title": "TCR1",
-      "image": "images/first floor/2 ff.jpg",
-      "links": [
-        {
-          "target": "First Floor",
+          "target": "g2",
           "yaw": 0,
-          "pitch": -15,
-          "text": "Go to Ground Floor"
+          "pitch": -10
         },
         {
-          "target": "TCR2",
-          "yaw": 200,
-          "pitch": -15,
-          "text": "Go to TCR 2"
+          "target": "f1",
+          "yaw": 90,
+          "pitch": -10,
+          "text": "Go up to First Floor"
         }
       ]
     },
-
-    "TCR2": {
-      "title": "TCR2",
-      "image": "images/first floor/3 ff.jpg",
+    "g2": {
+      "title": "CC",
+      "image": "images/Ground floor/2CC.jpeg",
       "links": [
         {
-          "target": "TCR1",
-          "yaw": -60,
-          "pitch": -15,
-          "text": "Go to TCR 1"
+          "target": "g1",
+          "yaw": 180,
+          "pitch": -10
         },
         {
-          "target": "TCR5",
-          "yaw": 100,
-          "pitch": -15,
-          "text": "Go to TCR 5"
-        }
-      ]
-    },
-
-    "TCR5": {
-      "title": "TCR5",
-      "image": "images/first floor/4 ff.jpg",
-      "links": [
-        {
-          "target": "TCR2",
-          "yaw": 280,
-          "pitch": -15,
-          "text": "Go to TCR 2"
-        },
-        {
-          "target": "ff_junction1",
-          "yaw": 100,
-          "pitch": -15,
-          "text": "Go to CSME HOD Cabin."
-        }
-      ]
-    },
-
-    "ff_junction1": {
-      "title": "TCR5",
-      "image": "images/first floor/5 ff.jpg",
-      "links": [
-        {
-          "target": "TCR5",
+          "target": "g3",
           "yaw": 0,
-          "pitch": -15,
-          "text": "Go to TCR 5"
+          "pitch": -10
+        }
+      ]
+    },
+    "g3": {
+      "title": "Seminar Hall",
+      "image": "images/Ground floor/3Seminar Hall.jpeg",
+      "links": [
+        {
+          "target": "g2",
+          "yaw": 180,
+          "pitch": -10
         },
         {
-          "target": "First Floor",
-          "yaw": 200,
-          "pitch": -15,
-          "text": "Go to TCR 1"
+          "target": "g4",
+          "yaw": 0,
+          "pitch": -10
+        }
+      ]
+    },
+    "g4": {
+      "title": "Ground Junction 4",
+      "image": "images/Ground floor/4Ground floor junction.jpeg",
+      "links": [
+        {
+          "target": "g3",
+          "yaw": 180,
+          "pitch": -10
+        },
+        {
+          "target": "g5",
+          "yaw": 0,
+          "pitch": -10
+        }
+      ],
+      "junction": true
+    },
+    "g5": {
+      "title": "Ground Junction 5",
+      "image": "images/Ground floor/5Ground floor junction.jpeg",
+      "links": [
+        {
+          "target": "g4",
+          "yaw": 180,
+          "pitch": -10
+        },
+        {
+          "target": "g6",
+          "yaw": 0,
+          "pitch": -10
+        }
+      ],
+      "junction": true
+    },
+    "g6": {
+      "title": "Programming Lab",
+      "image": "images/Ground floor/6Programming Lab.jpeg",
+      "links": [
+        {
+          "target": "g5",
+          "yaw": 180,
+          "pitch": -10
+        },
+        {
+          "target": "g7",
+          "yaw": 0,
+          "pitch": -10
+        }
+      ]
+    },
+    "g7": {
+      "title": "Intel Unnati",
+      "image": "images/Ground floor/7Intel Unnati.jpeg",
+      "links": [
+        {
+          "target": "g6",
+          "yaw": 180,
+          "pitch": -10
+        },
+        {
+          "target": "g8",
+          "yaw": 0,
+          "pitch": -10
+        }
+      ]
+    },
+    "g8": {
+      "title": "Ground Junction 8",
+      "image": "images/Ground floor/8Ground floor junction.jpeg",
+      "links": [
+        {
+          "target": "g7",
+          "yaw": 180,
+          "pitch": -10
+        },
+        {
+          "target": "g9",
+          "yaw": 0,
+          "pitch": -10
+        }
+      ],
+      "junction": true
+    },
+    "g9": {
+      "title": "ML",
+      "image": "images/Ground floor/9ML.jpeg",
+      "links": [
+        {
+          "target": "g8",
+          "yaw": 180,
+          "pitch": -10
+        }
+      ]
+    },
+    "f1": {
+      "title": "First Floor Junction 1",
+      "image": "images/First Floor/1First floor junction.jpeg",
+      "links": [
+        {
+          "target": "f2",
+          "yaw": 0,
+          "pitch": -10
+        },
+        {
+          "target": "s1",
+          "yaw": 90,
+          "pitch": -10,
+          "text": "Go up to Second Floor"
+        },
+        {
+          "target": "g1",
+          "yaw": 270,
+          "pitch": -10,
+          "text": "Go down to Ground Floor"
+        }
+      ],
+      "junction": true
+    },
+    "f2": {
+      "title": "First Floor Junction 2",
+      "image": "images/First Floor/2First floor junction.jpeg",
+      "links": [
+        {
+          "target": "f1",
+          "yaw": 180,
+          "pitch": -10
+        },
+        {
+          "target": "f3",
+          "yaw": 0,
+          "pitch": -10
+        }
+      ],
+      "junction": true
+    },
+    "f3": {
+      "title": "TCR5",
+      "image": "images/First Floor/3TCR5.jpeg",
+      "links": [
+        {
+          "target": "f2",
+          "yaw": 180,
+          "pitch": -10
+        }
+      ]
+    },
+    "s1": {
+      "title": "Second Floor Junction 1",
+      "image": "images/Second Floor/1Second floor junction.jpeg",
+      "links": [
+        {
+          "target": "s2",
+          "yaw": 0,
+          "pitch": -10
+        },
+        {
+          "target": "f1",
+          "yaw": 270,
+          "pitch": -10,
+          "text": "Go down to First Floor"
+        }
+      ],
+      "junction": true
+    },
+    "s2": {
+      "title": "Second Floor Junction 2",
+      "image": "images/Second Floor/2Second floor junction.jpeg",
+      "links": [
+        {
+          "target": "s1",
+          "yaw": 180,
+          "pitch": -10
+        },
+        {
+          "target": "s3",
+          "yaw": 0,
+          "pitch": -10
+        }
+      ],
+      "junction": true
+    },
+    "s3": {
+      "title": "Second Floor Junction 3",
+      "image": "images/Second Floor/3Second floor junction.jpeg",
+      "links": [
+        {
+          "target": "s2",
+          "yaw": 180,
+          "pitch": -10
+        },
+        {
+          "target": "s4",
+          "yaw": 0,
+          "pitch": -10
+        }
+      ],
+      "junction": true
+    },
+    "s4": {
+      "title": "CR1 Lab",
+      "image": "images/Second Floor/4CR1 lab.jpeg",
+      "links": [
+        {
+          "target": "s3",
+          "yaw": 180,
+          "pitch": -10
+        },
+        {
+          "target": "s5",
+          "yaw": 0,
+          "pitch": -10
+        }
+      ]
+    },
+    "s5": {
+      "title": "Language Lab & Cyber Security",
+      "image": "images/Second Floor/5Language lab & cyber security.jpeg",
+      "links": [
+        {
+          "target": "s4",
+          "yaw": 180,
+          "pitch": -10
+        },
+        {
+          "target": "s6",
+          "yaw": 0,
+          "pitch": -10
+        }
+      ]
+    },
+    "s6": {
+      "title": "IBM & Basic Programming Lab 2",
+      "image": "images/Second Floor/6IBM & Basic Programming lab 2.jpeg",
+      "links": [
+        {
+          "target": "s5",
+          "yaw": 180,
+          "pitch": -10
+        },
+        {
+          "target": "s7",
+          "yaw": 0,
+          "pitch": -10
+        }
+      ]
+    },
+    "s7": {
+      "title": "PBL & Big Data",
+      "image": "images/Second Floor/7PBL & Big data.jpeg",
+      "links": [
+        {
+          "target": "s6",
+          "yaw": 180,
+          "pitch": -10
         }
       ]
     }
-
   }
 }

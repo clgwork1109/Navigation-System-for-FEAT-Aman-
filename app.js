@@ -27,9 +27,10 @@ fetch("data.json")
   .then(data => {
     graph = data.nodes || {};
     populateLocationDropdowns();
-    startSelect.value = "entrance";
+    const firstStart = getFirstDestinationId();
+    startSelect.value = firstStart;
     destinationSelect.value = getDefaultDestination();
-    loadScene("entrance");
+    loadScene(firstStart);
   })
   .catch(error => {
     console.error(error);
@@ -41,7 +42,9 @@ function populateLocationDropdowns() {
   startSelect.innerHTML = "";
   destinationSelect.innerHTML = "";
 
+  // Junction photos are waypoints for routing only, so they are not listed.
   Object.entries(graph).forEach(([id, scene]) => {
+    if (scene.junction) return;
     const label = scene.title || id;
 
     const startOption = document.createElement("option");
@@ -56,8 +59,16 @@ function populateLocationDropdowns() {
   });
 }
 
+function getDestinationIds() {
+  return Object.keys(graph).filter(id => !graph[id].junction);
+}
+
+function getFirstDestinationId() {
+  return getDestinationIds()[0];
+}
+
 function getDefaultDestination() {
-  const ids = Object.keys(graph);
+  const ids = getDestinationIds();
   return ids.length > 1 ? ids[ids.length - 1] : ids[0];
 }
 
